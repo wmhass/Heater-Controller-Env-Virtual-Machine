@@ -1,4 +1,5 @@
-!/usr/bin/env bash
+#!/bin/bash 
+PRIVATE_BOOTSTRAP=/shared_folder/private_bootstrap.sh
 
 sudo yum -y update
 sudo yum -y install git
@@ -9,4 +10,6 @@ sudo chkconfig docker on
 sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
-if [ -f "./private_bootstrap.sh" ]; then echo "The file exists"; fi
+if [ -f $PRIVATE_BOOTSTRAP ]; then
+    sudo sh $PRIVATE_BOOTSTRAP
+fi
