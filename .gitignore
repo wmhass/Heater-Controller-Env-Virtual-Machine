@@ -2,3 +2,4 @@
 
 ### Vagrant ###
 .vagrant/
+private_bootstrap.sh
