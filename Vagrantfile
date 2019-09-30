@@ -8,5 +8,5 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, path: "./bootstrap.sh"
   # config.vm.network :forwarded_port, guest: 8000, host: 4567
   config.vm.network :public_network
-  config.vm.synced_folder "../shared_folder", "/shared_folder"
+  config.vm.synced_folder "./shared_folder", "/shared_folder"
 end
