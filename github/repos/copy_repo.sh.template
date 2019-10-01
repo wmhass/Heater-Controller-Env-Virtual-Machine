@@ -8,6 +8,7 @@ GITHUB_DOMAIN=github.com
 GITHUB_USER=your_username
 REPO_NAME=your_repo_name
 REPO_URL=git@$GITHUB_DOMAIN:$GITHUB_USER/$REPO_NAME.git
+BRANCH=master
 
 # Create repo root folder if does not exist
 if [ ! -d $REPO_DESTINATION_ROOT_DIRECTORY ]; then mkdir $REPO_DESTINATION_ROOT_DIRECTORY; fi
@@ -18,6 +19,6 @@ if [ -d $REPO_DESTINATION_DIRECTORY ]; then sudo rm -rf $REPO_DESTINATION_DIRECT
 
 # Clone repo
 cd $REPO_DESTINATION_ROOT_DIRECTORY
-git clone $REPO_URL
+git clone --single-branch --branch $BRANCH $REPO_URL
 
 # TODO: Rebuild and recreate Docker Container
