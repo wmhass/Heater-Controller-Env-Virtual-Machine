@@ -10,12 +10,23 @@ sudo chkconfig docker on
 sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
-# Copy SSH Keys
+
+# SSH Directory
 SSH_DIRECTORY=~/.ssh
-SSH_KEY=/shared_folder/github_key/id_rsa
+
+# Shared Directory
+SHARED_DIR=/shared_folder
+
+# Github Directories
+SHARED_GITHUB_DIR=$SHARED_DIR/github
+SHARED_GITHUB_REPOS_DIR=$SHARED_GITHUB_DIR/repos
+SSH_KEY=$SHARED_GITHUB_DIR/key/id_rsa
+
+# Create ssh Directory if it does not exist
 if [ ! -d $SSH_DIRECTORY ]; then mkdir -p $SSH_DIRECTORY; fi
 chmod 700 $SSH_DIRECTORY
 
+# Copy SSH Keys
 if [ -f $SSH_KEY ]; then 
     cp $SSH_KEY $SSH_DIRECTORY; 
 
@@ -23,20 +34,11 @@ if [ -f $SSH_KEY ]; then
     KNOWN_HOSTS=$SSH_DIRECTORY/known_hosts
     ssh-keyscan github.com >> $KNOWN_HOSTS
 
-    # Set Repo information
-    REPO_DESTINATION_ROOT_DIRECTORY=/usr/local/var
-    GITHUB_DOMAIN=github.com
-    GITHUB_USER=wmhass
-    REPO_NAME=GrowApp
-    REPO_URL=git@$GITHUB_DOMAIN:$GITHUB_USER/$REPO_NAME.git
-    REPO_DESTINATION_DIRECTORY=$REPO_DESTINATION_ROOT_DIRECTORY/$REPO_NAME
-
-    # Create repo root folder if does not exist
-    if [ ! -d $REPO_DESTINATION_ROOT_DIRECTORY ]; then mkdir $REPO_DESTINATION_ROOT_DIRECTORY; fi
-
-    # Delete directory if already exists
-    if [ -d $REPO_DESTINATION_DIRECTORY ]; then sudo rm -rf $REPO_DESTINATION_DIRECTORY; fi
-    # Clone repo
-    cd $REPO_DESTINATION_ROOT_DIRECTORY
-    git clone $REPO_URL
+    # Execute all scripts in SHARED_GITHUB_REPOS_DIR
+    if [ -d $SHARED_GITHUB_REPOS_DIR ]; then
+        for f in $SHARED_GITHUB_REPOS_DIR/*.sh
+        do
+            sh $f
+        done
+    fi
 fi
