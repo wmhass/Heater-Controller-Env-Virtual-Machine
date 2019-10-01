@@ -1,26 +1,26 @@
 #!/bin/bash 
 
 # Install dependencies
-sudo yum -y update
-sudo yum -y install git
-sudo amazon-linux-extras install -y docker
-sudo service docker start
-sudo usermod -a -G docker vagrant
-sudo chkconfig docker on
-sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
+# sudo yum -y update
+# sudo yum -y install git
+# sudo amazon-linux-extras install -y docker
+# sudo service docker start
+# sudo usermod -a -G docker vagrant
+# sudo chkconfig docker on
+# sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+# sudo chmod +x /usr/local/bin/docker-compose
 
 
 # SSH Directory
 SSH_DIRECTORY=~/.ssh
 
 # Shared Directory
-SHARED_DIR=/shared_folder
+VAGRANT_DIR=/vagrant
 
 # Github Directories
-SHARED_GITHUB_DIR=$SHARED_DIR/github
-SHARED_GITHUB_REPOS_DIR=$SHARED_GITHUB_DIR/repos
-SSH_KEY=$SHARED_GITHUB_DIR/key/id_rsa
+GITHUB_DIR=$VAGRANT_DIR/github
+SHARED_GITHUB_REPOS_DIR=$GITHUB_DIR/repos
+SSH_KEY=$GITHUB_DIR/key/id_rsa
 
 # Create ssh Directory if it does not exist
 if [ ! -d $SSH_DIRECTORY ]; then mkdir -p $SSH_DIRECTORY; fi

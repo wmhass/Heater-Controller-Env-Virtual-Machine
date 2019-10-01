@@ -1,0 +1,23 @@
+#!/bin/bash 
+
+# Repository Destination Directory
+REPO_DESTINATION_ROOT_DIRECTORY=/usr/local/var
+
+# Github Information
+GITHUB_DOMAIN=github.com
+GITHUB_USER=your_username
+REPO_NAME=your_repo_name
+REPO_URL=git@$GITHUB_DOMAIN:$GITHUB_USER/$REPO_NAME.git
+
+# Create repo root folder if does not exist
+if [ ! -d $REPO_DESTINATION_ROOT_DIRECTORY ]; then mkdir $REPO_DESTINATION_ROOT_DIRECTORY; fi
+
+# Delete repository directory if already exists
+REPO_DESTINATION_DIRECTORY=$REPO_DESTINATION_ROOT_DIRECTORY/$REPO_NAME
+if [ -d $REPO_DESTINATION_DIRECTORY ]; then sudo rm -rf $REPO_DESTINATION_DIRECTORY; fi
+
+# Clone repo
+cd $REPO_DESTINATION_ROOT_DIRECTORY
+git clone $REPO_URL
+
+# TODO: Rebuild and recreate Docker Container
