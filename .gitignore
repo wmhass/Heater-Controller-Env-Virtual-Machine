@@ -1,5 +1,6 @@
 # Created by https://www.gitignore.io/api/vagrant
 
+.DS_Store
+
 ### Vagrant ###
 .vagrant/
-private_bootstrap.sh
