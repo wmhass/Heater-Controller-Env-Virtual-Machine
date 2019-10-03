@@ -1,0 +1,18 @@
+[submodule "shared_folder/Heater-Controller-Server-Docker-Stack"]
+	path = shared_folder/Heater-Controller-Server-Docker-Stack
+	url = ./shared_folder/Heater-Controller-Server-Docker-Stack
+[submodule "shared_folder/services_repos/heater_control_app"]
+	path = shared_folder/services_repos/heater_control_app
+	url = ./shared_folder/services_repos/heater_control_app
+[submodule "shared_folder/services_repos/mosquitto"]
+	path = shared_folder/services_repos/mosquitto
+	url = ./shared_folder/services_repos/mosquitto
+[submodule "shared_folder/services_repos/mqtt_client_observer"]
+	path = shared_folder/services_repos/mqtt_client_observer
+	url = ./shared_folder/services_repos/mqtt_client_observer
+[submodule "shared_folder/services_repos/mqtt_http_api"]
+	path = shared_folder/services_repos/mqtt_http_api
+	url = ./shared_folder/services_repos/mqtt_http_api
+[submodule "shared_folder/services_repos/nginx"]
+	path = shared_folder/services_repos/nginx
+	url = ./shared_folder/services_repos/nginx
