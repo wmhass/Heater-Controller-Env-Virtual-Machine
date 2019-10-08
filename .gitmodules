@@ -16,3 +16,6 @@
 [submodule "shared_folder/services_repos/mqttauthorization"]
 	path = shared_folder/services_repos/mqttauthorization
 	url = ./shared_folder/services_repos/mqttauthorization
+[submodule "shared_folder/services_repos/apps_open_api"]
+	path = shared_folder/services_repos/apps_open_api
+	url = ./shared_folder/services_repos/apps_open_api
