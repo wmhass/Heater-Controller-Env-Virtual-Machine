@@ -16,3 +16,6 @@
 [submodule "shared_folder/services_repos/nginx"]
 	path = shared_folder/services_repos/nginx
 	url = ./shared_folder/services_repos/nginx
+[submodule "shared_folder/services_repos/mqttauthorization"]
+	path = shared_folder/services_repos/mqttauthorization
+	url = ./shared_folder/services_repos/mqttauthorization
