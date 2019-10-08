@@ -1,9 +1,6 @@
 [submodule "shared_folder/Heater-Controller-Server-Docker-Stack"]
 	path = shared_folder/Heater-Controller-Server-Docker-Stack
 	url = ./shared_folder/Heater-Controller-Server-Docker-Stack
-[submodule "shared_folder/services_repos/apps_open_api"]
-	path = shared_folder/services_repos/apps_open_api
-	url = ./shared_folder/services_repos/apps_open_api
 [submodule "shared_folder/services_repos/mosquitto"]
 	path = shared_folder/services_repos/mosquitto
 	url = ./shared_folder/services_repos/mosquitto
