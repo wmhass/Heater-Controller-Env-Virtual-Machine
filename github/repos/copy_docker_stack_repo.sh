@@ -24,6 +24,7 @@ git clone --single-branch --branch $BRANCH --recurse-submodules $REPO_URL
 if [ -d $REPO_DESTINATION_DIRECTORY ]; then
     cd $REPO_DESTINATION_DIRECTORY
     sudo sh sh/updatestack.sh --all --build --pull
+    sudo sh sh/stack.sh --start --prod
 fi
 
 # TODO: Rebuild and recreate Docker Container
