@@ -7,8 +7,8 @@ sudo amazon-linux-extras install -y docker
 sudo service docker start
 sudo usermod -a -G docker vagrant
 sudo chkconfig docker on
-sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
+sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /bin/docker-compose
+sudo chmod +x /bin/docker-compose
 
 
 # SSH Directory
@@ -42,3 +42,6 @@ if [ -d $SHARED_GITHUB_REPOS_DIR ]; then
         sh $f
     done
 fi
+
+echo "IP Address:"
+ifconfig | grep "inet.*broadcast 192.168.0.255"

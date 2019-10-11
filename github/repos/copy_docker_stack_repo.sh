@@ -1,8 +1,7 @@
 #!/bin/bash 
 
 # Repository Destination Directory
-#REPO_DESTINATION_ROOT_DIRECTORY=/usr/local/var
-REPO_DESTINATION_ROOT_DIRECTORY=~/Desktop
+REPO_DESTINATION_ROOT_DIRECTORY=/usr/local/var
 
 # Github Information
 GITHUB_DOMAIN=github.com
@@ -24,7 +23,7 @@ git clone --single-branch --branch $BRANCH --recurse-submodules $REPO_URL
 
 if [ -d $REPO_DESTINATION_DIRECTORY ]; then
     cd $REPO_DESTINATION_DIRECTORY
-    sh sh/buildprod.sh
+    sh sh/buildprod.sh --all
     sh sh/startprod.sh
 fi
 
