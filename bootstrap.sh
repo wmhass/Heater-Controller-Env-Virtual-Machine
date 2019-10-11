@@ -42,6 +42,3 @@ if [ -d $SHARED_GITHUB_REPOS_DIR ]; then
         sh $f
     done
 fi
-
-echo "IP Address:"
-ifconfig | grep "inet.*broadcast 192.168.0.255"
