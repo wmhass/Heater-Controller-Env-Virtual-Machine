@@ -23,8 +23,7 @@ git clone --single-branch --branch $BRANCH --recurse-submodules $REPO_URL
 
 if [ -d $REPO_DESTINATION_DIRECTORY ]; then
     cd $REPO_DESTINATION_DIRECTORY
-    sh sh/buildprod.sh --all
-    sh sh/startprod.sh
+    sh sh/buildstack.sh --all
 fi
 
 # TODO: Rebuild and recreate Docker Container
