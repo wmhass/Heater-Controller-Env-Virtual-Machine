@@ -33,12 +33,12 @@ if [ -f $SSH_KEY ]; then
     # Add Github as a known host
     KNOWN_HOSTS=$SSH_DIRECTORY/known_hosts
     ssh-keyscan github.com >> $KNOWN_HOSTS
+fi
 
-    # Execute all scripts in SHARED_GITHUB_REPOS_DIR
-    if [ -d $SHARED_GITHUB_REPOS_DIR ]; then
-        for f in $SHARED_GITHUB_REPOS_DIR/*.sh
-        do
-            sh $f
-        done
-    fi
+# Execute all scripts in SHARED_GITHUB_REPOS_DIR
+if [ -d $SHARED_GITHUB_REPOS_DIR ]; then
+    for f in $SHARED_GITHUB_REPOS_DIR/*.sh
+    do
+        sh $f
+    done
 fi
