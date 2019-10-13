@@ -1,3 +1,3 @@
-[submodule "shared_folder/Heater-Controller-Server-Docker-Stack"]
-	path = shared_folder/Heater-Controller-Server-Docker-Stack
-	url = git@github.com:wmhass/Heater-Controller-Server-Docker-Stack.git
+[submodule "docker_stack/Heater-Controller-Server-Docker-Stack"]
+	path = docker_stack/Heater-Controller-Server-Docker-Stack
+	url = ./docker_stack/Heater-Controller-Server-Docker-Stack
