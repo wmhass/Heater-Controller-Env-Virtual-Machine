@@ -18,9 +18,9 @@ REPO_DESTINATION_DIRECTORY=$REPO_DESTINATION_ROOT_DIRECTORY/$REPO_NAME
 if [ -d $REPO_DESTINATION_DIRECTORY ]; then sudo rm -rf $REPO_DESTINATION_DIRECTORY; fi
 
 # Give correct permissions to files
-RUN sudo chmod -R 777 /var/run/docker.sock
-RUN chmod 600 ~/.ssh/id_rsa.pub
-RUN chmod 600 ~/.ssh/id_rsa
+sudo chmod -R 777 /var/run/docker.sock
+chmod 600 ~/.ssh/id_rsa.pub
+chmod 600 ~/.ssh/id_rsa
 
 # Clone repo
 cd $REPO_DESTINATION_ROOT_DIRECTORY
