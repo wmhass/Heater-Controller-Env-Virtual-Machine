@@ -1,3 +1,0 @@
-[submodule "docker_stack/Heater-Controller-Server-Docker-Stack"]
-	path = docker_stack/Heater-Controller-Server-Docker-Stack
-	url = git@github.com:wmhass/Heater-Controller-Server-Docker-Stack.git
