@@ -19,5 +19,8 @@ else
   sudo /usr/local/var/Heater-Controller-Server-Docker-Stack/sh/stack.sh --start --dev
 fi
 
+cd /usr/local/var/Heater-Controller-jenkins
+docker-compose up -d
+
 echo IPAddress:
 ifconfig | grep "inet.*broadcast 192.168.0.255"
