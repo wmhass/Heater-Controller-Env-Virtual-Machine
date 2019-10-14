@@ -8,7 +8,8 @@ sudo /usr/local/var/Heater-Controller-Server-Docker-Stack/sh/stack.sh --stop --d
 if [[ " ${ARGUMENTS[@]} " =~ "prod" ]]; then
   # Production
   echo "!!!!!!!!! ====> Launching Production stack, for Development, do: ENV='dev' vagrant up"
-  # sudo /usr/local/var/Heater-Controller-Server-Docker-Stack/sh/updatestack.sh --all --pull --build
+  # In the future, we might want to replace `--build-docker-images` by `--pull-docker-image`
+  sudo /usr/local/var/Heater-Controller-Server-Docker-Stack/sh/updatestack.sh --all --pull-github-repo --build-docker-images
   sudo /usr/local/var/Heater-Controller-Server-Docker-Stack/sh/stack.sh --start --prod
 #elif [[ " ${ARGUMENTS[@]} " =~ " dev " ]]; then
 # Run ENV='dev' vagrant up
