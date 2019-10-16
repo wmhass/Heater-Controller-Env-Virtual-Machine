@@ -2,7 +2,7 @@
 
 # SSH Directory
 ROOT_SSH_DIRECTORY=/root/.ssh
-VAGRANT_SSH_DIRECTORY=/root/.ssh
+VAGRANT_SSH_DIRECTORY=/home/vagrant/.ssh
 
 # Shared Directory
 VAGRANT_DIR=/vagrant
@@ -21,7 +21,7 @@ if [ ! -d $VAGRANT_SSH_DIRECTORY ]; then mkdir -p $VAGRANT_SSH_DIRECTORY; fi
 chmod 700 $VAGRANT_SSH_DIRECTORY
 
 # Copy SSH Private Key
-if [ -f $SSH_PRIVATE_KEY ]; then 
+if [ -f $SSH_PRIVATE_KEY ]; then
     cp $SSH_PRIVATE_KEY $ROOT_SSH_DIRECTORY;
     cp $SSH_PRIVATE_KEY $VAGRANT_SSH_DIRECTORY;
 
