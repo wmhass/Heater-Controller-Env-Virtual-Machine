@@ -1,4 +1,4 @@
-#!/bin/bash 
+    #!/bin/bash 
 
 # Repository Destination Directory
 REPO_DESTINATION_ROOT_DIRECTORY=/usr/local/var
@@ -22,7 +22,8 @@ cd $REPO_DESTINATION_ROOT_DIRECTORY
 git clone --single-branch --branch $BRANCH --recurse-submodules $REPO_URL
 
 if [ -d $REPO_DESTINATION_DIRECTORY ]; then
-    cd $REPO_DESTINATION_DIRECTORY
+    chown -R vagrant $REPO_DESTINATION_DIRECTORY
+    chmod -R 777 $REPO_DESTINATION_DIRECTORY
 fi
 
 # TODO: Rebuild and recreate Docker Container

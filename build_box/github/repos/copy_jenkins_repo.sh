@@ -17,17 +17,13 @@ if [ ! -d $REPO_DESTINATION_ROOT_DIRECTORY ]; then mkdir $REPO_DESTINATION_ROOT_
 REPO_DESTINATION_DIRECTORY=$REPO_DESTINATION_ROOT_DIRECTORY/$REPO_NAME
 if [ -d $REPO_DESTINATION_DIRECTORY ]; then sudo rm -rf $REPO_DESTINATION_DIRECTORY; fi
 
-# Give correct permissions to files
-sudo chmod -R 777 /var/run/docker.sock
-chmod 600 ~/.ssh/id_rsa.pub
-chmod 600 ~/.ssh/id_rsa
-
 # Clone repo
 cd $REPO_DESTINATION_ROOT_DIRECTORY
 git clone --single-branch --branch $BRANCH --recurse-submodules $REPO_URL
 
 if [ -d $REPO_DESTINATION_DIRECTORY ]; then
-    cd $REPO_DESTINATION_DIRECTORY
+    chown -R vagrant $REPO_DESTINATION_DIRECTORY
+    chmod -R 777 $REPO_DESTINATION_DIRECTORY
 fi
 
 
