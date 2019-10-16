@@ -5,7 +5,7 @@ if [[ " ${ARGUMENTS[@]} " =~ "prod" ]]; then
   # Production
   echo "!!!!!!!!! ====> Launching Production stack, for Development, do: ENV='dev' vagrant up"
   # In the future, we might want to replace `--build-docker-images` by `--pull-docker-image`
-  sudo /usr/local/var/Heater-Controller-Server-Docker-Stack/sh/updatestack.sh --all --build-docker-images
+  sudo /usr/local/var/Heater-Controller-Server-Docker-Stack/sh/updatestack.sh --all --build
   sudo /usr/local/var/Heater-Controller-Server-Docker-Stack/sh/stack.sh --stop --dev
   sudo /usr/local/var/Heater-Controller-Server-Docker-Stack/sh/stack.sh --start --prod
 # Run ENV='dev' vagrant up
