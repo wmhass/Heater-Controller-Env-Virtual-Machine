@@ -8,7 +8,7 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "heater_controller"
   config.vm.box_url = "heater_controller.box"
-  config.vm.network "public_network"
   config.vm.base_mac = nil
   config.vm.provision :shell, args: ENV['ENV'], run: "always", path: "../shell_scripts/startup.sh"
+  config.vm.network :public_network
 end
